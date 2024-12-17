@@ -1,14 +1,14 @@
 package utils;
 
+import config.ConfigReader;
 import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class Base {
 
     ConfigReader configReader = new ConfigReader();
-    @BeforeClass
+    @BeforeMethod
     public void setUp() {
         RestAssured.baseURI=configReader.getBaseUrl();
-
     }
 }
